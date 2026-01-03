@@ -10,6 +10,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with: { flutter-version: "3.24.5" }
       - run: flutter pub get
-      - run: flutter build apk --release --no-sign
-      - uses: actions/upload-artifact@v4  # <-- Fixed: v4 instead of v3
+      - run: flutter build apk --release  # <-- Fixed: Removed --no-sign
+      - uses: actions/upload-artifact@v4
         with: { name: calvin-on-now-apk, path: build/app/outputs/flutter-apk/app-release.apk }
